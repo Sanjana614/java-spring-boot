@@ -13,6 +13,11 @@ public class Driver {
         Test obj = new Test();
         Thread t1 = new Thread(obj);
         t1.start();
+        try {
+            t1.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println("Finish main method : " + Thread.currentThread().getName());
     }
 }

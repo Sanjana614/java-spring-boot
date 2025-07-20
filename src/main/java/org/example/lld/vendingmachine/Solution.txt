@@ -1,0 +1,7 @@
+singleton class VendingMachine
+
+
+abstract class Product
+String id
+String name
+Double price

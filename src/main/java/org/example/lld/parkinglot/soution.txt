@@ -1,0 +1,37 @@
+Workflow:
+1. Vehicles comes to parking lot to park. Find available parking spot.
+2. park vehicle.
+2. release vehicle.
+
+** Entities
+1.ParkingLot
+String id
+String name
+List<Level> levels
+
+- List<Spot> showAvailableSpots()
+- List<Spot> showAvailableSpots(VehicleType vehicleType)
+- boolean assignParkingSpot(Vehicle vehicle)
+- void releaseSpot(Spot spot)
+
+
+2. Level
+int floor
+List<Spot> spots
+
+3. Spot
+id
+VehicleType vehicleType
+Vehicle vehicle
+boolean occupied
+
+4. enum VehicleType
+MotorCycle
+Car
+Truck
+
+5.) Vehicle
+id
+VehicleType vehicleType
+
+

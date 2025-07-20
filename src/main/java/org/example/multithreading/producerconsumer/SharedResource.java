@@ -9,7 +9,7 @@ public class SharedResource {
 
     public SharedResource() {
         this.buffer = new LinkedList<>();
-        this.bufferSize = 5;
+        this.bufferSize = 10;
     }
 
     public synchronized void addItem(int num) {
@@ -17,6 +17,7 @@ public class SharedResource {
         while (buffer.size() == bufferSize) {
             try {
                 System.out.println("Buffer is full. " + Thread.currentThread().getName() + " is waiting. : " + num);
+                System.out.println("buffer size is : " + buffer.size());
                 wait();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -25,7 +26,9 @@ public class SharedResource {
 
         buffer.add(num);
         System.out.println(Thread.currentThread().getName() + " added item : " + num);
-        notify();
+        System.out.println("buffer size is : " + buffer.size());
+        notifyAll();
+        sleepThread(100);
     }
 
     public synchronized void consumeItem() {
@@ -33,6 +36,7 @@ public class SharedResource {
         while (buffer.isEmpty()) {
             try {
                 System.out.println(Thread.currentThread().getName() + " is waiting to consume");
+                System.out.println("buffer size is : " + buffer.size());
                 wait();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -41,6 +45,16 @@ public class SharedResource {
 
         Integer element = buffer.poll();
         System.out.println(Thread.currentThread().getName() + " consumed : " + element);
-        notify();
+        System.out.println("buffer size is : " + buffer.size());
+        notifyAll();
+        sleepThread(100);
+    }
+
+    private static void sleepThread(int timeInMillis) {
+        try {
+            Thread.sleep(timeInMillis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

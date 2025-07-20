@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class SingletonStudentService {
 
-    private static SingletonStudentService instance;
+    private static volatile SingletonStudentService instance;
 
     private SingletonStudentService() {}
 
