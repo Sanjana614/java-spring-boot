@@ -2,6 +2,6 @@ singleton class VendingMachine
 
 
 abstract class Product
-String id
+String code
 String name
 Double price
