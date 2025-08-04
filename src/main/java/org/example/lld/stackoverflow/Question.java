@@ -33,7 +33,7 @@ public class Question extends CreationInfo implements Votable, Commentable {
     }
 
     @Override
-    public void addComment(Comment comment) {
+    public synchronized void addComment(Comment comment) {
         comments.add(comment);
     }
 
@@ -43,7 +43,7 @@ public class Question extends CreationInfo implements Votable, Commentable {
     }
 
     @Override
-    public void vote(Vote vote) {
+    public synchronized void vote(Vote vote) {
         User voter = vote.getAuthor();
         boolean alreadyVotedByUser = votes.stream().anyMatch(v -> voter.equals(v.getAuthor()));
         if (alreadyVotedByUser) {

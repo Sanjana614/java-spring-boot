@@ -27,7 +27,10 @@ public class User {
         return this.reputation;
     }
 
-    public void updateReputation(int point) {
+    public synchronized void updateReputation(int point) {
         this.reputation += point;
+        if (this.reputation < 0) {
+            this.reputation = 0;
+        }
     }
 }

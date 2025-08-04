@@ -36,7 +36,7 @@ public class Answer extends CreationInfo implements Votable, Commentable {
     }
 
     @Override
-    public void vote(Vote vote) {
+    public synchronized void vote(Vote vote) {
         User voter = vote.getAuthor();
         boolean alreadyVotedByUser = votes.stream().anyMatch(v -> voter.equals(v.getAuthor()));
         if (alreadyVotedByUser) {
@@ -64,7 +64,7 @@ public class Answer extends CreationInfo implements Votable, Commentable {
         return this.answerId;
     }
 
-    public void markAsAccepted() {
+    public synchronized void markAsAccepted() {
         if (BooleanUtils.isTrue(accepted)) {
             throw new IllegalStateException("This answer is already accepted.");
         }
