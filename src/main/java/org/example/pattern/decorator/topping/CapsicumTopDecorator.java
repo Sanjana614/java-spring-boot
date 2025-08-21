@@ -1,12 +1,12 @@
-package org.example.pattern.decorator.topling;
+package org.example.pattern.decorator.topping;
 
 import org.example.pattern.decorator.Pizza;
 import org.example.pattern.decorator.PizzaDecorator;
 
-public class CornTopDecorator extends PizzaDecorator {
-    private static final int PRICE = 10;
+public class CapsicumTopDecorator extends PizzaDecorator {
+    public static final int PRICE = 8;
 
-    public CornTopDecorator(Pizza pizza) {
+    public CapsicumTopDecorator(Pizza pizza) {
         super(pizza);
     }
 

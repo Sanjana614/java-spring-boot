@@ -1,4 +1,4 @@
-package org.example.pattern.decorator.topling;
+package org.example.pattern.decorator.topping;
 
 import org.example.pattern.decorator.Pizza;
 import org.example.pattern.decorator.PizzaDecorator;

@@ -1,31 +1,20 @@
 package org.example;
 
 
-import java.util.Scanner;
+import org.springframework.beans.BeanUtils;
+import org.springframework.context.annotation.Bean;
 
 public class TestFile {
+
     public static void main(String[] args) {
-
-
-        Scanner scanner = new Scanner(System.in);
-        int data = scanner.nextInt();
-        for(int i = 0; i <= data; i++) {
-            for(int j = i; j < data; j++) {
-                System.out.println(" ");
-            }
-            for(int k = i; k < data; k++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
-
-        for(int i = data-1; i >=1; i--) {
-            for(int j = data ; j <= data; j++) {
-                System.out.println(" ");
-            }
-            for(int k = i; k < data; k++) {
-                System.out.print("*");
-            }
-        }
+        StudentRequest request = new StudentRequest();
+        request.setAge(18);
+        request.setName("Vikash");
+        Address address = new Address("Gurugram", "122011", "Haryana");
+        request.setAddress(address);
+        StudentRequest request1 = new StudentRequest();
+        BeanUtils.copyProperties(request, request1);
+        System.out.println(request);
+        System.out.println(request1);
     }
 }

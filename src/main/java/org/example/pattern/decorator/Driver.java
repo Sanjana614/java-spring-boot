@@ -1,8 +1,8 @@
 package org.example.pattern.decorator;
 
-import org.example.pattern.decorator.topling.CapsicumTopDecorator;
-import org.example.pattern.decorator.topling.CheeseTopDecorator;
-import org.example.pattern.decorator.topling.CornTopDecorator;
+import org.example.pattern.decorator.topping.CapsicumTopDecorator;
+import org.example.pattern.decorator.topping.CheeseTopDecorator;
+import org.example.pattern.decorator.topping.CornTopDecorator;
 
 public class Driver {
     public static void main(String[] args) {
