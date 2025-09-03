@@ -1,6 +1,6 @@
-package org.example.pattern.observer;
+package org.example.pattern.observer.observer;
 
-public class MobileDisplay implements Observer {
+public class TVDisplay implements Observer {
     private String weather;
 
     @Override
@@ -10,6 +10,6 @@ public class MobileDisplay implements Observer {
     }
 
     public void display() {
-        System.out.println("Updated weather in mobile display: " + this.weather);
+        System.out.println("Updated weather in TV display: " + this.weather);
     }
 }

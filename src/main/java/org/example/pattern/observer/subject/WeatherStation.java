@@ -1,4 +1,6 @@
-package org.example.pattern.observer;
+package org.example.pattern.observer.subject;
+
+import org.example.pattern.observer.observer.Observer;
 
 import java.util.HashSet;
 import java.util.Set;

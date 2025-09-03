@@ -1,5 +1,9 @@
 package org.example.pattern.observer;
 
+import org.example.pattern.observer.observer.MobileDisplay;
+import org.example.pattern.observer.observer.TVDisplay;
+import org.example.pattern.observer.subject.WeatherStation;
+
 public class Driver {
     public static void main(String[] args) {
         WeatherStation weatherStation = new WeatherStation();

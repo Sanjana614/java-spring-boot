@@ -1,4 +1,6 @@
-package org.example.pattern.observer;
+package org.example.pattern.observer.subject;
+
+import org.example.pattern.observer.observer.Observer;
 
 public interface Subject {
     void addObserver(Observer observer);
