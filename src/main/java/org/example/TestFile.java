@@ -16,5 +16,6 @@ public class TestFile {
         BeanUtils.copyProperties(request, request1);
         System.out.println(request);
         System.out.println(request1);
+        sayWelcome obj = new sayWelcome();
     }
 }
